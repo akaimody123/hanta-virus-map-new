@@ -1,0 +1,104 @@
+{
+  "last_updated": "2026-05-09T00:00:00Z",
+  "cases": [
+    {
+      "id": "cdc-NM",
+      "location": "New Mexico, USA",
+      "lat": 34.5199,
+      "lng": -105.8701,
+      "level": "state",
+      "count": 3,
+      "last_case_date": "2026-04-12",
+      "source": "CDC",
+      "source_url": "https://www.cdc.gov/hantavirus/surveillance/index.html"
+    },
+    {
+      "id": "cdc-CO",
+      "location": "Colorado, USA",
+      "lat": 39.5501,
+      "lng": -105.7821,
+      "level": "state",
+      "count": 2,
+      "last_case_date": "2026-03-20",
+      "source": "CDC",
+      "source_url": "https://www.cdc.gov/hantavirus/surveillance/index.html"
+    },
+    {
+      "id": "cdc-WA",
+      "location": "Washington, USA",
+      "lat": 47.7511,
+      "lng": -120.7401,
+      "level": "state",
+      "count": 1,
+      "last_case_date": "2025-11-03",
+      "source": "CDC",
+      "source_url": "https://www.cdc.gov/hantavirus/surveillance/index.html"
+    },
+    {
+      "id": "cdc-CA",
+      "location": "California, USA",
+      "lat": 36.7783,
+      "lng": -119.4179,
+      "level": "state",
+      "count": 2,
+      "last_case_date": "2025-08-15",
+      "source": "CDC",
+      "source_url": "https://www.cdc.gov/hantavirus/surveillance/index.html"
+    },
+    {
+      "id": "cdc-MT",
+      "location": "Montana, USA",
+      "lat": 46.8797,
+      "lng": -110.3626,
+      "level": "state",
+      "count": 1,
+      "last_case_date": "2025-07-22",
+      "source": "CDC",
+      "source_url": "https://www.cdc.gov/hantavirus/surveillance/index.html"
+    },
+    {
+      "id": "hm-ar-patagonia",
+      "location": "Patagonia, Argentina",
+      "lat": -45.8696,
+      "lng": -67.4977,
+      "level": "region",
+      "count": 5,
+      "last_case_date": "2026-02-28",
+      "source": "HealthMap",
+      "source_url": "https://healthmap.org"
+    },
+    {
+      "id": "hm-cl-biobio",
+      "location": "Biobío, Chile",
+      "lat": -37.4689,
+      "lng": -72.3527,
+      "level": "region",
+      "count": 3,
+      "last_case_date": "2025-12-10",
+      "source": "HealthMap",
+      "source_url": "https://www.who.int/csr/don/en/"
+    },
+    {
+      "id": "hm-de-bavaria",
+      "location": "Bavaria, Germany",
+      "lat": 48.7904,
+      "lng": 11.4979,
+      "level": "state",
+      "count": 8,
+      "last_case_date": "2025-09-22",
+      "source": "HealthMap",
+      "source_url": "https://healthmap.org"
+    },
+    {
+      "id": "hm-br-rs",
+      "location": "Rio Grande do Sul, Brazil",
+      "lat": -30.0346,
+      "lng": -51.2177,
+      "level": "state",
+      "count": 4,
+      "last_case_date": "2025-07-18",
+      "source": "HealthMap",
+      "source_url": "https://www.who.int/csr/don/en/"
+    }
+  ]
+}
