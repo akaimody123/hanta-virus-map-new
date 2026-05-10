@@ -56,7 +56,7 @@ test('renders two ad units', async () => {
 
 test('renders hantavirus footer blurb', async () => {
   render(<App />)
-  expect(await screen.findByText(/hantavirus/i)).toBeInTheDocument()
+  expect(await screen.findByText(/spread through contact/i)).toBeInTheDocument()
 })
 
 test('renders LIVE badge when data is fresh', async () => {

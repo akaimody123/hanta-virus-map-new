@@ -71,7 +71,7 @@ export default function App() {
       }}>
         <div style={{ flex: 1 }}>
           <div style={{ fontWeight: 600, fontSize: '13px', color: '#374151', marginBottom: '4px' }}>
-            What is this disease?
+            What is Hantavirus?
           </div>
           <p style={{ fontSize: '12px', color: '#6b7280', margin: 0, lineHeight: 1.6 }}>
             Hantavirus is a rare but serious illness spread through contact with infected rodents or their droppings.
