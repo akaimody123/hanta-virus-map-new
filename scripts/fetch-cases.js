@@ -23,6 +23,11 @@ const STATE_COORDS = {
   MN: { lat: 46.7296, lng: -94.6859, name: 'Minnesota' },
 }
 
+function mmwrWeekToDate(year, week) {
+  const d = new Date(parseInt(year), 0, 1 + (parseInt(week) - 1) * 7)
+  return d.toISOString().slice(0, 10)
+}
+
 export function normalizeCDCRecord(record) {
   const count = parseInt(record.count, 10)
   if (!count) return null
@@ -35,7 +40,7 @@ export function normalizeCDCRecord(record) {
     lng: coords.lng,
     level: 'state',
     count,
-    last_case_date: `${record.mmwryear}-W${String(record.mmwrweek).padStart(2, '0')}`,
+    last_case_date: mmwrWeekToDate(record.mmwryear, record.mmwrweek),
     source: 'CDC',
     source_url: 'https://www.cdc.gov/hantavirus/surveillance/index.html',
   }
@@ -85,22 +90,28 @@ async function fetchHealthMap() {
 
 async function main() {
   const existing = JSON.parse(readFileSync(OUTPUT, 'utf-8'))
-  const allCases = [...existing.cases]
+  const freshCases = []
+  const failedPrefixes = []
 
-  for (const { name, fn } of [
-    { name: 'CDC', fn: fetchCDC },
-    { name: 'HealthMap', fn: fetchHealthMap },
+  for (const { name, fn, prefix } of [
+    { name: 'CDC', fn: fetchCDC, prefix: 'cdc-' },
+    { name: 'HealthMap', fn: fetchHealthMap, prefix: 'hm-' },
   ]) {
     try {
       const fetched = await fn()
-      allCases.push(...fetched)
+      freshCases.push(...fetched)
       console.log(`${name}: +${fetched.length} records`)
     } catch (err) {
       console.error(`${name} failed, keeping existing data: ${err.message}`)
+      failedPrefixes.push(prefix)
     }
   }
 
-  const cases = deduplicateCases(allCases)
+  const fallbackCases = existing.cases.filter(c =>
+    failedPrefixes.some(prefix => c.id.startsWith(prefix))
+  )
+
+  const cases = deduplicateCases([...freshCases, ...fallbackCases])
   writeFileSync(OUTPUT, JSON.stringify({ last_updated: new Date().toISOString(), cases }, null, 2))
   console.log(`Done. ${cases.length} cases written.`)
 }

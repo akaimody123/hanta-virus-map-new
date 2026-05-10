@@ -1,5 +1,4 @@
-export function StatCards({ cases }) {
-  const now = new Date()
+export function StatCards({ cases, now = new Date() }) {
   const currentYear = now.getFullYear().toString()
   const currentMonth = now.toISOString().slice(0, 7)
 

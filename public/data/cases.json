@@ -75,7 +75,7 @@
       "level": "region",
       "count": 3,
       "last_case_date": "2025-12-10",
-      "source": "WHO",
+      "source": "HealthMap",
       "source_url": "https://www.who.int/csr/don/en/"
     },
     {
@@ -97,7 +97,7 @@
       "level": "state",
       "count": 4,
       "last_case_date": "2025-07-18",
-      "source": "WHO",
+      "source": "HealthMap",
       "source_url": "https://www.who.int/csr/don/en/"
     }
   ]

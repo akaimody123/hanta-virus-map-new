@@ -22,22 +22,25 @@ export function Map({ cases }) {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-      {cases.map(c => (
-        <CircleMarker
-          key={c.id}
-          center={[c.lat, c.lng]}
-          radius={markerRadius(c.count)}
-          pathOptions={{
-            color: markerColor(c.last_case_date),
-            fillColor: markerColor(c.last_case_date),
-            fillOpacity: 0.6,
-          }}
-        >
-          <Popup>
-            <MarkerPopup caseData={c} />
-          </Popup>
-        </CircleMarker>
-      ))}
+      {cases.map(c => {
+        const color = markerColor(c.last_case_date)
+        return (
+          <CircleMarker
+            key={c.id}
+            center={[c.lat, c.lng]}
+            radius={markerRadius(c.count)}
+            pathOptions={{
+              color,
+              fillColor: color,
+              fillOpacity: 0.6,
+            }}
+          >
+            <Popup>
+              <MarkerPopup caseData={c} />
+            </Popup>
+          </CircleMarker>
+        )
+      })}
     </MapContainer>
   )
 }

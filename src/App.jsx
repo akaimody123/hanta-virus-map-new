@@ -6,12 +6,22 @@ import 'leaflet/dist/leaflet.css'
 
 export default function App() {
   const [data, setData] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     fetch(import.meta.env.BASE_URL + 'data/cases.json')
       .then(r => r.json())
       .then(setData)
+      .catch(err => setError(err.message))
   }, [])
+
+  if (error) {
+    return (
+      <div style={{ textAlign: 'center', padding: '60px', color: '#dc2626', fontFamily: 'system-ui, sans-serif' }}>
+        Failed to load data. Please try refreshing.
+      </div>
+    )
+  }
 
   if (!data) {
     return (

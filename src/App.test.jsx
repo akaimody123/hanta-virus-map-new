@@ -33,6 +33,12 @@ beforeEach(() => {
   })
 })
 
+test('renders error message when fetch fails', async () => {
+  global.fetch = vi.fn().mockRejectedValue(new Error('Network error'))
+  render(<App />)
+  expect(await screen.findByText(/Failed to load data/i)).toBeInTheDocument()
+})
+
 test('renders site title', async () => {
   render(<App />)
   expect(await screen.findByText('HantaTracker')).toBeInTheDocument()

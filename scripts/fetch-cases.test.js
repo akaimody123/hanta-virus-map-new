@@ -17,6 +17,7 @@ describe('normalizeCDCRecord', () => {
     expect(result.source).toBe('CDC')
     expect(result.lat).toBeDefined()
     expect(result.lng).toBeDefined()
+    expect(result.last_case_date).toMatch(/^\d{4}-\d{2}-\d{2}$/)
   })
 
   test('returns null for records with count 0', () => {
