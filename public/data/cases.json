@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-09T00:00:00Z",
+  "last_updated": "2026-05-11T09:35:02.888Z",
   "cases": [
     {
       "id": "cdc-NM",
@@ -55,50 +55,6 @@
       "last_case_date": "2025-07-22",
       "source": "CDC",
       "source_url": "https://www.cdc.gov/hantavirus/surveillance/index.html"
-    },
-    {
-      "id": "hm-ar-patagonia",
-      "location": "Patagonia, Argentina",
-      "lat": -45.8696,
-      "lng": -67.4977,
-      "level": "region",
-      "count": 5,
-      "last_case_date": "2026-02-28",
-      "source": "HealthMap",
-      "source_url": "https://healthmap.org"
-    },
-    {
-      "id": "hm-cl-biobio",
-      "location": "Biobío, Chile",
-      "lat": -37.4689,
-      "lng": -72.3527,
-      "level": "region",
-      "count": 3,
-      "last_case_date": "2025-12-10",
-      "source": "HealthMap",
-      "source_url": "https://www.who.int/csr/don/en/"
-    },
-    {
-      "id": "hm-de-bavaria",
-      "location": "Bavaria, Germany",
-      "lat": 48.7904,
-      "lng": 11.4979,
-      "level": "state",
-      "count": 8,
-      "last_case_date": "2025-09-22",
-      "source": "HealthMap",
-      "source_url": "https://healthmap.org"
-    },
-    {
-      "id": "hm-br-rs",
-      "location": "Rio Grande do Sul, Brazil",
-      "lat": -30.0346,
-      "lng": -51.2177,
-      "level": "state",
-      "count": 4,
-      "last_case_date": "2025-07-18",
-      "source": "HealthMap",
-      "source_url": "https://www.who.int/csr/don/en/"
     }
   ]
 }
